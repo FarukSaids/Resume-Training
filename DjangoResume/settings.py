@@ -13,12 +13,12 @@ from logging import DEBUG
 from pathlib import Path
 import environ
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 env = environ.Env(DEBUG=(bool, False)) #debug dosyasını env dosyasından al yoksa false yap
 environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -73,6 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'DjangoResume.wsgi.application'
+
 
 
 # Database
