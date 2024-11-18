@@ -8,10 +8,14 @@ RUN apt-get update && apt-get install -y \
     --no-install-recommends && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+#set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV VIRTUAL_ENV = /opt/venv
 #pip requirements
 RUN pip install --upgrade pip
-RUN pip install virtualenv && python -m virtualenv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
+RUN pip install virtualenv && python -m virtualenv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 ADD ./requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
