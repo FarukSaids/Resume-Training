@@ -33,7 +33,6 @@ ALLOWED_HOSTS = env('ALLOWED_HOSTS',cast=list) #okunulacak deger list tipinde ol
 CSRF_TRUSTED_ORIGINS =env('CSRF_TRUSTED_ORIGINS',cast=list)
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
