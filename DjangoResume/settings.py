@@ -56,10 +56,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'DjangoResume.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR / 'Templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -86,6 +87,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 # Password validation
