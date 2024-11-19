@@ -28,6 +28,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG=env('DEBUG')
 
 
+
 #web uygulamanızın hangi domainlerden veya IP adreslerinden erişilebileceğini belirtir.
 ALLOWED_HOSTS = env('ALLOWED_HOSTS',cast=list) #okunulacak deger list tipinde olacak
 CSRF_TRUSTED_ORIGINS =env('CSRF_TRUSTED_ORIGINS',cast=list)
