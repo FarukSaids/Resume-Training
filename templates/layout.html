@@ -1,0 +1,42 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+{% include 'includes/head.html' %}
+<body>
+{% include 'includes/navbar.html' %}
+<!-- home banner-->
+
+                    {% block home_banner_area %}
+                    {% endblock %}
+                    
+
+<!-- end home banner-->
+
+{% block content %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% include 'includes/footer.html' %}
+
+{% block extra_scripts_for_contact  %}
+    
+{% endblock %}
+
+</body>
+</html>
