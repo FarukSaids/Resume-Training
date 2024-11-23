@@ -22,7 +22,7 @@
 {% block content %}
     <section class="contact_area p_120">
         <div class="container">
-           
+
             <div class="row">
                 <div class="col-lg-3">
                     <div class="contact_info">
@@ -44,8 +44,9 @@
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="/contact_form" method="post" id="contactForm"
+                    <form class="row contact_form" action="{% url 'contact_form' %}" method="post" id="contactForm"
                           novalidate="novalidate">
+                        {% csrf_token %}
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="name" name="name"
