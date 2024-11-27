@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 
 #set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
-ENV VIRTUAL_ENV = /opt/venv
+ENV VIRTUAL_ENV=/opt/venv
 #pip requirements
 RUN pip install --upgrade pip
 RUN pip install virtualenv && python -m virtualenv $VIRTUAL_ENV
