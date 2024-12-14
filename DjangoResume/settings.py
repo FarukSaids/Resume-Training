@@ -76,6 +76,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'DjangoResume.wsgi.application'
 
 
