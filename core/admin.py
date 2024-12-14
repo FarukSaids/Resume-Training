@@ -20,3 +20,12 @@ class ImageSettinAdmin(admin.ModelAdmin):
 
     class Meta:  # default özellik veriliyor
         model = ImageSetting
+
+@admin.register(Skill)  # admin sayfasında görülür olması icin
+class SkillAdmin(admin.ModelAdmin):
+    list_display = ['id', 'order', 'name', 'percentage', 'updated_date', 'created_date']
+    search_fields = ['name']
+    list_editable = ['order', 'name', 'percentage']
+
+    class Meta:  # default özellik veriliyor
+        model = Skill
