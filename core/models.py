@@ -1,7 +1,24 @@
 from django.db import models
 
+
+class AbstractModel(models.Model):
+    updated_date = models.DateField(
+        blank=True,
+        auto_now=True,
+        verbose_name='Updated Date',
+        help_text='',
+    )
+    created_date = models.DateField(
+        blank=True,
+        auto_now_add=True,  # bir kere kayıt alıyor
+        verbose_name='Created Date',
+        help_text='',
+    )
+    class Meta:
+        abstract = True #django icin buranın abstract modunu acıyoruz yoksa bir tablo daha olusturacak
+
 # Create your models here.
-class GeneralSetting(models.Model): #database de bir tablo old belirtiliyor.
+class GeneralSetting(AbstractModel): #database de bir tablo old belirtiliyor.
     name = (models.CharField
         (
         default='',
@@ -24,18 +41,7 @@ class GeneralSetting(models.Model): #database de bir tablo old belirtiliyor.
         verbose_name='Parameter',
         help_text='',
     )
-    updated_date =models.DateField(
-        blank=True,
-        auto_now=True,
-        verbose_name='Updated Date',
-        help_text='',
-    )
-    created_date =models.DateField(
-        blank=True,
-        auto_now_add=True, #bir kere kayıt alıyor
-        verbose_name='Created Date',
-        help_text='',
-    )
+
     def __str__(self):
          return f'General Setting: {self.name}'
     class Meta:
@@ -44,7 +50,7 @@ class GeneralSetting(models.Model): #database de bir tablo old belirtiliyor.
         ordering = ['name']
 
 
-class ImageSetting(models.Model):
+class ImageSetting(AbstractModel):
         name = (models.CharField(
             default='',
             max_length=254,
@@ -65,18 +71,6 @@ class ImageSetting(models.Model):
             blank=True,
             help_text='',
             upload_to='images/',
-        )
-        updated_date = models.DateField(
-            blank=True,
-            auto_now=True,
-            verbose_name='Updated Date',
-            help_text='',
-        )
-        created_date = models.DateField(
-            blank=True,
-            auto_now_add=True,  # bir kere kayıt alıyor
-            verbose_name='Created Date',
-            help_text='',
         )
 
         def __str__(self):
