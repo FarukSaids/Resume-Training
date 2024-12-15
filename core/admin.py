@@ -38,3 +38,12 @@ class ExperienceAdmin(admin.ModelAdmin):
 
     class Meta:  # default özellik veriliyor
         model = Experience
+
+@admin.register(Education)  # admin sayfasında görülür olması icin
+class EducationAdmin(admin.ModelAdmin):
+    list_display = ['id', 'school_name' ,'major', 'department', 'start_date', 'end_date', 'updated_date', 'created_date']
+    search_fields = ['school_name' ,'major', 'department']
+    list_editable = ['school_name' ,'major', 'department', 'start_date', 'end_date']
+
+    class Meta:  # default özellik veriliyor
+        model = Education

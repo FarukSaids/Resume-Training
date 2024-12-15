@@ -137,3 +137,40 @@ class Experience(AbstractModel):
        verbose_name_plural = 'Experiences'
        ordering = ['company_name']
 
+class Education(AbstractModel):
+   school_name = models.CharField(
+       default='',
+       max_length=254,
+       blank=True,
+       verbose_name='School Name',
+   )
+   major = models.CharField(
+       default='',
+       max_length=254,
+       blank=True,
+       verbose_name='Major',
+   )
+   department = models.CharField(
+       default='',
+       max_length=254,
+       blank=True,
+       verbose_name='Department',
+   )
+   start_date = models.DateField(
+       verbose_name='Start Date',
+
+   )
+   end_date = models.DateField(
+       default=None,
+       null=True,
+       blank=True,
+       verbose_name='End Date',
+   )
+
+   def __str__(self):
+       return f'Skill: {self.school_name}'
+
+   class Meta:
+       verbose_name = 'Education'
+       verbose_name_plural = 'Educations'
+       ordering = ['school_name']
