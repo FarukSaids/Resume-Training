@@ -47,3 +47,12 @@ class EducationAdmin(admin.ModelAdmin):
 
     class Meta:  # default özellik veriliyor
         model = Education
+
+@admin.register(SocialMedia)  # admin sayfasında görülür olması icin
+class SocialMediaAdmin(admin.ModelAdmin):
+    list_display = ['id', 'order' ,'link', 'icon', 'updated_date', 'created_date']
+    search_fields = ['order']
+    list_editable = ['order' ,'link', 'icon']
+
+    class Meta:  # default özellik veriliyor
+        model = SocialMedia
