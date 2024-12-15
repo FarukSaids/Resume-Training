@@ -56,3 +56,12 @@ class SocialMediaAdmin(admin.ModelAdmin):
 
     class Meta:  # default özellik veriliyor
         model = SocialMedia
+
+@admin.register(Document)  # admin sayfasında görülür olması icin
+class DocumentAdmin(admin.ModelAdmin):
+    list_display = ['id', 'order' ,'slug', 'button_text','file', 'updated_date', 'created_date']
+    search_fields = ['slug', 'button_text']
+    list_editable = ['order' ,'slug', 'button_text','file']
+
+    class Meta:  # default özellik veriliyor
+        model = Document
