@@ -26,6 +26,7 @@ def layout(request):
         'site_title': site_title,
         'site_keywords': site_keywords,
         'home_banner_name': home_banner_name,
+        'site_description': site_description,
         'home_banner_title': home_banner_title,
         'home_banner_description ': home_banner_description,
         'about_myself_footer': about_myself_footer,

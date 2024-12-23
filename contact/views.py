@@ -1,12 +1,27 @@
 from django.http import JsonResponse
 from django.shortcuts import render
+from contact.models import Message
 
 
 # Create your views here.
 def contact_form(request):
+    if request.method == 'POST':
+        name = request.POST.get('name') #req post bir obje olarak gelir (json) html icindeki name="name kısmı
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        Message.objects.create(name=name, email=email, subject=subject, message=message)
+
+
+        success = True
+        message = 'Contact form sent successfully!'
+
+    else:
+        success:False
+        message = 'Contact form not sent '
     context = {
-        'success': True,
-        'message': 'Contact form sent successfully!',
+        'success': success,
+        'message': message,
     }
     return JsonResponse(context)
 
